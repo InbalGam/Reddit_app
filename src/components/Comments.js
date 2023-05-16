@@ -5,7 +5,7 @@ function Comments(props) {
     const [showingComments, setShowingComments] = useState(false);
 
     function showComments(e) {
-        setShowingComments(true);
+        setShowingComments(!showingComments);
     };
 
 
