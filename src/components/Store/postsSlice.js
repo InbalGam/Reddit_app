@@ -1,10 +1,21 @@
-import {createSlice} from '@reduxjs/redux-toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 export const postsSlice = createSlice({
     name: 'posts',
-    initialState: {},
+    initialState: [],
     reducers: {
-        addPost: (state, action) => {}
+        addPost: (state, action) => {
+// payload = {
+//     headline: 'string',
+//     image: img,
+//     userName: name,
+//     comments: ['string1', 'string2'],
+//     likes: 100,
+//     dislikes: 3,
+//     timePosted: '12 hrs ago'
+// };
+            state.push(action.payload);
+        }
     }
 });
 
