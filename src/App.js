@@ -17,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Search />
       </header>
       <body className="App-body">
         <RouterProvider router={ router } />
