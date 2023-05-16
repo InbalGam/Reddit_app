@@ -5,6 +5,7 @@ import Root, { ROUTES } from "./components/Root";
 import Posts from './components/Posts';
 import Community from './components/Community';
 import Search from './components/Search';
+import styles from './components/styles/App.css';
 
 function App() {
 
@@ -16,10 +17,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App_header" styles={styles.App_header}>
         <Search />
       </header>
-      <body className="App-body">
+      <body className="App_body" styles={styles.App_body}>
         <RouterProvider router={ router } />
       </body>
     </div>

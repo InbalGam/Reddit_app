@@ -1,0 +1,12 @@
+* {
+    background-color: #e9ddce;
+}
+
+.App_header {
+    height: 20%;
+}
+
+.App_body {
+    height: 80%;
+    margin-top: 1rem;
+}
