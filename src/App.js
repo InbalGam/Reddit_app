@@ -22,6 +22,7 @@ function App() {
       </header>
       <body className="App_body" styles={styles.App_body}>
         <RouterProvider router={ router } />
+        <Posts />
       </body>
     </div>
   );
