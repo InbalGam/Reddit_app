@@ -1,4 +1,6 @@
 import Post from './Post';
+import { useSelector } from 'react-redux';
+import { selectPosts } from './Store/postsSlice';
 
 /// example for a hard-coded post-
 /*{
@@ -12,6 +14,9 @@ import Post from './Post';
 }*/
 ///
 function Posts() {
+
+    //const posts = useSelector(selectPosts);
+
     const posts = [{
         headline: 'headline example 1',
         image: 'img',
