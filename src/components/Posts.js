@@ -25,7 +25,7 @@ function Posts() {
         headline: 'headline example 2',
         image: 'img',
         userName: 'Nir',
-        comments: ['string1', 'string2'],
+        comments: ['string1', 'string2', 'string3', 'string4'],
         likes: 115,
         dislikes: 3,
         timePosted: '10 hrs ago'
