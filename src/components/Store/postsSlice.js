@@ -32,10 +32,13 @@ export const postsSlice = createSlice({
 //     timePosted: '12 hrs ago'
 // };
             state.push(action.payload);
+        },
+        changePosts: (state, action) => {
+            state.push(action.payload);
         }
     }
 });
 
 export const selectPosts = state => state.posts;
-export const { addPost } = postsSlice.actions;
+export const { changePosts } = postsSlice.actions;
 export default postsSlice.reducer;
