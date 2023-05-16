@@ -6,7 +6,7 @@ import Post from './Post';
     image: img,
     userName: name,
     comments: ['string1', 'string2'],
-    likes: 3,
+    likes: 100,
     dislikes: 3,
     timePosted: '12hrsago'
 }*/
@@ -17,18 +17,18 @@ function Posts() {
         image: 'img',
         userName: 'Inbal',
         comments: ['string1', 'string2'],
-        likes: 3,
+        likes: 100,
         dislikes: 3,
-        timePosted: '12hrsago'
+        timePosted: '12 hrs ago'
     },
     {
         headline: 'headline example 2',
         image: 'img',
         userName: 'Nir',
         comments: ['string1', 'string2'],
-        likes: 3,
+        likes: 115,
         dislikes: 3,
-        timePosted: '12hrsago'
+        timePosted: '10 hrs ago'
     }];
 
     return (
