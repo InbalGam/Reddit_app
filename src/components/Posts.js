@@ -1,12 +1,17 @@
 import Post from './Post';
-import { useSelector } from 'react-redux';
-import { selectPosts } from './Store/postsSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectPosts, loadPosts } from './Store/postsSlice';
+import { useEffect } from "react";
 
 function Posts() {
 
     const posts = useSelector(selectPosts);
     const { hasError, isLoading } = useSelector((state) => state.posts);
-    console.log('in posts');
+    //console.log('in posts');
+    const dispatch = useDispatch();
+    useEffect(() => {
+      dispatch(loadPosts('home'));
+    }, [dispatch]);
 
     return (
         <div className="posts_container">
