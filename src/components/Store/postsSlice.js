@@ -1,34 +1,31 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { searchReddit } from '../Utilities/Reddit_API';
 
 
-
-export const loadPosts = (term) => {
-    return async (dispatch) => {
+export const loadPosts = createAsyncThunk(
+    'posts/loadPosts',
+    async (term) => {
         const results = await searchReddit(term);
-        dispatch(fetchPosts(results));
+        return results;
     }
-};
+);
 
 
 
 export const postsSlice = createSlice({
     name: 'posts',
-    initialState: [],
-    reducers: {
-        addPost: (state, action) => {
-// payload = {
-//     headline: 'string',
-//     image: img,
-//     userName: name,
-//     comments: ['string1', 'string2'],
-//     likes: 100,
-//     dislikes: 3,
-//     timePosted: '12 hrs ago'
-// };
-            state.push(action.payload);
+    initialState: {
+        posts: [],
+        isLoading: false,
+        hasError: false
+    },
+    reducers: {},
+    extraReducers: {
+        [loadPosts.pending]: (state, action) => {
+            state.isLoading = true;
+            state.hasError = false;
         },
-        fetchPosts: (state, action) => {
+        [loadPosts.fulfilled]: (state, action) => {
             const data = action.payload.data.children.map(el => {
                 return {
                     author: el.data.author_fullname,
@@ -45,12 +42,17 @@ export const postsSlice = createSlice({
                     thumbnail: el.data.thumbnail
                 };
             });
-            state.length = 0;
-            state.push(...data);
+            state.posts = data;
+            state.isLoading = false;
+            state.hasError = false;
+        },
+        [loadPosts.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.hasError = true;
         }
     }
 });
 
-export const selectPosts = state => state.posts;
+export const selectPosts = state => state.posts.posts;
 export const { fetchPosts } = postsSlice.actions;
 export default postsSlice.reducer;
