@@ -14,24 +14,7 @@ export const loadPosts = (term) => {
 
 export const postsSlice = createSlice({
     name: 'posts',
-    initialState: [{
-        headline: 'headline example 1',
-        image: 'img',
-        userName: 'Inbal',
-        comments: ['string1', 'string2'],
-        likes: 100,
-        dislikes: 3,
-        timePosted: '12 hrs ago'
-    },
-    {
-        headline: 'headline example 2',
-        image: 'img',
-        userName: 'Nir',
-        comments: ['string1', 'string2', 'string3', 'string4'],
-        likes: 115,
-        dislikes: 3,
-        timePosted: '10 hrs ago'
-    }],
+    initialState: [],
     reducers: {
         addPost: (state, action) => {
 // payload = {
@@ -57,7 +40,7 @@ export const postsSlice = createSlice({
                     ups: el.data.ups,
                     downs: el.data.downs,
                     selftext: el.data.selftext,
-                    timeCreated: el.data.created_utc,
+                    timeCreated: new Date(el.data.created * 1000),
                     comments: ['string1', 'string2'],
                     thumbnail: el.data.thumbnail
                 };
