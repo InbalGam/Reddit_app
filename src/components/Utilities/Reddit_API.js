@@ -1,11 +1,18 @@
 async function searchReddit(subReddit) {
     const lower = subReddit.toLowerCase();
     const url = `https://www.reddit.com/search.json?q=${lower}`;
-    const response = await fetch(url, {method: 'GET',
-                                        headers: {'User-agent': 'yourbot'}});
+    const response = await fetch(url, {method: 'GET'});
     const jsonData = await response.json();
     return jsonData;
 };
 
-export { searchReddit };
+
+async function getComments(permalink) {
+    const url = `https://www.reddit.com${permalink}.json`;
+    const response = await fetch(url, {method: 'GET'});
+    const jsonData = await response.json();
+    return jsonData;
+};
+
+export { searchReddit, getComments };
 
