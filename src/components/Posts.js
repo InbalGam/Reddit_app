@@ -16,6 +16,7 @@ import { selectPosts } from './Store/postsSlice';
 function Posts() {
 
     const posts = useSelector(selectPosts);
+    console.log('in posts');
 
     return (
         <div className="posts_container">

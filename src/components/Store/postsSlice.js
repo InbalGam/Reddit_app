@@ -1,4 +1,16 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import { searchReddit } from '../Utilities/Reddit_API';
+
+
+
+export const loadPosts = (term) => {
+    return async (dispatch) => {
+        const results = await searchReddit(term);
+        dispatch(fetchPosts(results));
+    }
+};
+
+
 
 export const postsSlice = createSlice({
     name: 'posts',
@@ -34,7 +46,24 @@ export const postsSlice = createSlice({
             state.push(action.payload);
         },
         fetchPosts: (state, action) => {
-            state.push(action.payload);
+            const data = action.payload.data.children.map(el => {
+                return {
+                    author: el.data.author_fullname,
+                    title: el.data.title,
+                    url: el.data.url,
+                    score: el.data.score,
+                    numComments: el.data.num_comments,
+                    viewCount: el.data.view_count,
+                    ups: el.data.ups,
+                    downs: el.data.downs,
+                    selftext: el.data.selftext,
+                    timeCreated: el.data.created_utc,
+                    comments: ['string1', 'string2'],
+                    thumbnail: el.data.thumbnail
+                };
+            });
+            state.length = 0;
+            state.push(...data);
         }
     }
 });

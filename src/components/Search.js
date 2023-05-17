@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { searchReddit } from './Utilities/Reddit_API';
+import { useDispatch } from 'react-redux';
+import { loadPosts } from './Store/postsSlice';
 
 function Search() {
     const [text, setText] = useState('');
+    const dispatch = useDispatch();
 
     function handleTextChange(e) {
         setText(e.target.value);
@@ -11,8 +13,7 @@ function Search() {
 
     async function search(e) {
         e.preventDefault();
-        const { subreddit, listing, limit, timeframe } = [text, 100, 'month', 'top'];
-        const results = await searchReddit(subreddit, listing, limit, timeframe);
+        dispatch(loadPosts(text));
     };
 
 
