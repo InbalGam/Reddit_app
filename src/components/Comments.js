@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-//import { loadComments } from './Store/postsSlice';
 import ClipLoader from 'react-spinners/ClipLoader';
 import Comment from './Comment';
 import { getComments } from './Utilities/Reddit_API';
@@ -24,6 +23,7 @@ function Comments(props) {
                 downs: el.data.downs,
                 body: el.data.body,
                 timeCreated: new Date(el.data.created * 1000),
+                permalink: el.data.permalink
             };
         });
         setComments(data);
