@@ -11,16 +11,6 @@ export const loadPosts = createAsyncThunk(
 );
 
 
-export const loadComments = createAsyncThunk(
-    'posts/loadComments',
-    async ({ permalink, id}) => {
-        const results = await getComments(permalink);
-        const resultObj = {results, id}
-        return resultObj;
-    }
-);
-
-
 
 export const postsSlice = createSlice({
     name: 'posts',
@@ -52,8 +42,7 @@ export const postsSlice = createSlice({
                     timeCreated: new Date(el.data.created * 1000),
                     thumbnail: el.data.thumbnail,
                     id: el.data.id,
-                    permalink: el.data.permalink,
-                    comments: []
+                    permalink: el.data.permalink
                 };
             });
             state.posts = data;
@@ -63,29 +52,6 @@ export const postsSlice = createSlice({
         [loadPosts.rejected]: (state, action) => {
             state.isLoading = false;
             state.hasError = true;
-        },
-        [loadComments.pending]: (state, action) => {
-            state.isCommentsLoading = true;
-            state.hasCommentsError = false;
-        },
-        [loadComments.fulfilled]: (state, action) => {
-            const obj = state.posts.filter(el => el.id === action.payload.id);
-            const data = action.payload.results[1].data.children.map(el => {
-                return {
-                    author: el.data.author,
-                    ups: el.data.ups,
-                    downs: el.data.downs,
-                    body: el.data.body,
-                    timeCreated: new Date(el.data.created * 1000),
-                };
-            });
-            obj[0].comments = data;
-            state.isCommentsLoading = false;
-            state.hasCommentsError = false;
-        },
-        [loadComments.rejected]: (state, action) => {
-            state.isCommentsLoading = false;
-            state.hasCommentsError = true;
         }
     }
 });
