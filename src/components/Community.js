@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Select from 'react-select';
 import { useDispatch } from 'react-redux';
-import { changePosts } from './Store/postsSlice';
+import { fetchPosts } from './Store/postsSlice';
 import { v4 as uuidv4 } from 'uuid';
 
 function Community() {

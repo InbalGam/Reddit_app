@@ -33,12 +33,12 @@ export const postsSlice = createSlice({
 // };
             state.push(action.payload);
         },
-        changePosts: (state, action) => {
+        fetchPosts: (state, action) => {
             state.push(action.payload);
         }
     }
 });
 
 export const selectPosts = state => state.posts;
-export const { changePosts } = postsSlice.actions;
+export const { fetchPosts } = postsSlice.actions;
 export default postsSlice.reducer;
