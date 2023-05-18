@@ -25,7 +25,7 @@ function Posts() {
     return (
         <div className="posts_container">
             <ul>
-            {hasError ? 'Could not fetch posts, try again' : (isLoading ? <ClipLoader color={'#3c0c21'} size={150} /> : <Post posts={posts}/>)}
+            {hasError ? 'Could not fetch posts, try again' : (isLoading ? <ClipLoader color={'#3c0c21'} size={150} /> : posts.map((el, ind) => <Post el={el} ind={ind}/>))}
             </ul>
         </div>
     );

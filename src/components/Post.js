@@ -3,20 +3,18 @@ import styles from './styles/Post.css';
 import { timeAgo } from './Utilities/utilities';
 
 function Post(props) {
-    return (
-        props.posts.map((el, ind) => 
-        <li key={ind}>
+    return ( 
+        <li key={props.ind}>
             <div className="post">
-                <h4>{el.title}</h4> 
-                <img src={el.thumbnail} alt='post image' styles={styles.img}/>
-                <p>{el.author}</p>
-                <Comments el={el} />
-                <p>{el.numComments}</p>
-                <p>{el.ups - el.downs}</p>
-                <p>{timeAgo(el.timeCreated)}</p>
+                <h4>{props.el.title}</h4> 
+                <img src={props.el.thumbnail} alt='post image' styles={styles.img}/>
+                <p>{props.el.author}</p>
+                <Comments el={props.el} />
+                <p>{props.el.numComments}</p>
+                <p>{props.el.ups - props.el.downs}</p>
+                <p>{timeAgo(props.el.timeCreated)}</p>
             </div>
-        </li>)
-    );
+        </li>);
 }
 
 export default Post;
