@@ -20,7 +20,6 @@ function Community() {
                 url: el.data.url
             }
         });
-        console.log(popular);
         setPopulars(popular);
     };
 
@@ -39,7 +38,6 @@ function Community() {
         <div className="community_container">
             <h3>Popular Communities</h3>
             <ul>{populars.map((el, ind) => <li key={ind} className={communityName === el.name ? 'communityChosen' : ''}><Link to={`/${el.name}`}>{el.name}</Link></li>)}</ul>
-            {communityName}
         </div>
     );
 }
