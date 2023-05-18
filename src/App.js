@@ -1,5 +1,5 @@
 import './App.css';
-import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Navigate } from "react-router-dom";
 import Root, { ROUTES } from "./components/Root";
 import Posts from './components/Posts';
 import Community from './components/Community';
@@ -10,6 +10,7 @@ function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
+      <Route index element={<Navigate to={ROUTES.Community} replace/>}/>
       <Route path={ROUTES.Community} element={ <Community /> }/>
     </Route>
   ));
