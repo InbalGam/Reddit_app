@@ -1,6 +1,5 @@
 import './App.css';
-import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Navigate } from "react-router-dom";
-import Root, { ROUTES } from "./components/Root";
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import Posts from './components/Posts';
 import Community from './components/Community';
 import Search from './components/Search';
@@ -9,9 +8,7 @@ import styles from './components/styles/App.css';
 function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/" element={ <Root/> }>
-      <Route path='/:communityName?' element={ <Community /> } />
-    </Route>
+    <Route path='/:communityName?' element={ <Community /> } />
   ));
 
   return (
