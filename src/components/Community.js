@@ -10,7 +10,7 @@ function Community() {
     const [community, setCommunity] = useState('');
     const dispatch = useDispatch();
     const [populars, setPopulars] = useState([]);
-    const { communityName } = useParams()
+    const { communityName = 'home' } = useParams()
 
     async function getPopularCommunities() {
         const results = await getPopular();

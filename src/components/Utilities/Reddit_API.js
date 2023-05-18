@@ -23,4 +23,14 @@ async function getPopular() {
     return jsonData;
 };
 
-export { searchReddit, getComments, getPopular };
+
+async function loadMore(subReddit, after) {
+    const lower = subReddit.toLowerCase();
+    const url = `https://www.reddit.com/search.json?q=${lower}&after=${after}`;
+    const response = await fetch(url, {method: 'GET'});
+    const jsonData = await response.json();
+    return jsonData;
+};
+
+
+export { searchReddit, getComments, getPopular, loadMore };
