@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { searchReddit, getComments } from '../Utilities/Reddit_API';
+import { searchReddit } from '../Utilities/Reddit_API';
 
 
 export const loadPosts = createAsyncThunk(

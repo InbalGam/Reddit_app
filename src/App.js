@@ -10,8 +10,7 @@ function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
-      <Route index element={<Navigate to={ROUTES.Community} replace/>}/>
-      <Route path={ROUTES.Community} element={ <Community /> }/>
+      <Route path='/:communityName?' element={ <Community /> } />
     </Route>
   ));
 
