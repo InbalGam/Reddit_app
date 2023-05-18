@@ -14,5 +14,13 @@ async function getComments(permalink) {
     return jsonData;
 };
 
-export { searchReddit, getComments };
 
+
+async function getPopular() {
+    const url = `https://www.reddit.com/subreddits/popular.json`;
+    const response = await fetch(url, {method: 'GET'});
+    const jsonData = await response.json();
+    return jsonData;
+};
+
+export { searchReddit, getComments, getPopular };
