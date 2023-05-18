@@ -14,9 +14,7 @@ export const loadPosts = createAsyncThunk(
 export const loadMorePosts = createAsyncThunk(
     'posts/loadMorePosts',
     async (arg, { getState }) => {
-        console.log('inbal');
         const status = getState();
-        console.log(status);
         const results = await loadMore(status.posts.subReddit, status.posts.posts.slice(-1)[0].name);
         return {results};
     }

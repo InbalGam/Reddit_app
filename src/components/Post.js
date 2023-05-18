@@ -7,7 +7,7 @@ function Post(props) {
         <li key={props.ind}>
             <div className="post">
                 <h4>{props.el.title}</h4> 
-                <img src={props.el.thumbnail} alt='post image' styles={styles.img}/>
+                {props.el.thumbnail !== 'self' && props.el.thumbnail !== 'default' ? <img src={props.el.thumbnail} alt='post image' styles={styles.img}/> : ''}
                 <p>{props.el.author}</p>
                 <Comments el={props.el} />
                 <p>{props.el.numComments}</p>
