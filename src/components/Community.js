@@ -31,7 +31,7 @@ function Community() {
       }, []);
 
 
-      useEffect(() => {
+    useEffect(() => {
         dispatch(loadPosts({term:communityName, type:'community'}));
       }, [communityName]);
 
