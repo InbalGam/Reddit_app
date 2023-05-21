@@ -1,0 +1,52 @@
+div .community_container {
+    width: 25%;
+    height: 1380px;
+    margin-left: 50px;
+    box-shadow: 0.625rem 0.625rem #dddbe0;
+    border-radius: 2rem;
+    outline: auto;
+    outline-color: #cacad2;
+    text-align: left;
+}
+
+h3 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: #3d234b;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 15px;
+}
+
+p {
+    margin: 0;
+}
+
+.popularLink {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.community_container li:hover {
+    color: #429e5c;
+    background-color: rgb(233, 229, 229);
+    border-radius: 0.5rem;
+}
+
+.listPopular .communityChosen {
+    display: block;
+    background-color: rgb(234, 212, 248);
+    border-radius: 0.5rem;
+}

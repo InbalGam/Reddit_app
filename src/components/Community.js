@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { loadPosts } from './Store/postsSlice';
 import { getPopular } from './Utilities/Reddit_API';
 import { useParams } from "react-router-dom";
+import styles from '../components/styles/Community.css';
 
 function Community() {
     const [community, setCommunity] = useState('');

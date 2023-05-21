@@ -1,17 +1,21 @@
-* {
-    background-color: #f0eff2;
-}
-
 .App {
     text-align: center;
 }
 
 .App_header {
     background-color: white;
-    height: 70px;
+    height: 4.375rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 10px 10px #dddbe0;
+    box-shadow: 0.625rem 0.625rem #dddbe0;
+}
+
+.App_body {
+    width: 90%;
+    margin-top: 3.125rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
 }
