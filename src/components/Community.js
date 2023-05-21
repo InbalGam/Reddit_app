@@ -18,7 +18,8 @@ function Community() {
         const popular = results.data.children.map(el => {
             return {
                 name: el.data.display_name,
-                url: el.data.url
+                url: el.data.url,
+                img: el.data.header_img
             }
         });
         setPopulars(popular);
@@ -39,7 +40,7 @@ function Community() {
         <div className="community_container">
             <h3>Popular Communities</h3>
             <ul className='listPopular'>{populars.map((el, ind) => <li key={ind} className={communityName === el.name ? 'communityChosen' : ''}>
-                <Link to={`/${el.name}`} className='popularLink'><p className='popularName'>{el.name}</p></Link></li>)}</ul>
+                <Link to={`/${el.name}`} className='popularLink'><img src={el.img}/><p className='popularName'>{el.name}</p></Link></li>)}</ul>
         </div>
     );
 }
