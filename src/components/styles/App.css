@@ -17,7 +17,7 @@ body {
 }
 
 .App_body {
-    width: 90%;
+    width: 100%;
     margin-top: 3.125rem;
     display: flex;
     flex-direction: row-reverse;

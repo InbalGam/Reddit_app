@@ -1,6 +1,7 @@
 div .community_container {
     width: 25%;
     margin-left: 3.125rem;
+    margin-right: 2rem;
     box-shadow: 0.625rem 0.625rem #dddbe0;
     border-radius: 2rem;
     text-align: left;
