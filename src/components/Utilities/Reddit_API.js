@@ -1,6 +1,11 @@
-async function searchReddit(subReddit) {
+async function searchReddit(subReddit, type) {
     const lower = subReddit.toLowerCase();
-    const url = `https://www.reddit.com/search.json?q=${lower}`;
+    let url;
+    if (type === 'search') {
+        url = `https://www.reddit.com/search.json?q=${lower}`;
+    } else {
+        url = `https://www.reddit.com/r/${lower}/.json`;
+    }
     const response = await fetch(url, {method: 'GET'});
     const jsonData = await response.json();
     return jsonData;
@@ -24,9 +29,14 @@ async function getPopular() {
 };
 
 
-async function loadMore(subReddit, after) {
+async function loadMore(subReddit, after, type) {
     const lower = subReddit.toLowerCase();
-    const url = `https://www.reddit.com/search.json?q=${lower}&after=${after}`;
+    let url;
+    if (type === 'search') {
+        url = `https://www.reddit.com/search.json?q=${lower}&after=${after}`;
+    } else {
+        url = `https://www.reddit.com/r/${lower}/.json?after=${after}`;
+    }
     const response = await fetch(url, {method: 'GET'});
     const jsonData = await response.json();
     return jsonData;

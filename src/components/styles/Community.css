@@ -1,12 +1,11 @@
 div .community_container {
     width: 25%;
-    height: 1380px;
-    margin-left: 50px;
+    margin-left: 3.125rem;
     box-shadow: 0.625rem 0.625rem #dddbe0;
     border-radius: 2rem;
-    outline: auto;
-    outline-color: #cacad2;
     text-align: left;
+    background-color: white;
+    padding-bottom: 0.625rem;
 }
 
 h3 {
@@ -23,7 +22,7 @@ ul {
 }
 
 li {
-    padding: 15px;
+    padding: 0.9rem;
 }
 
 p {

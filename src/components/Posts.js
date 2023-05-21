@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectPosts, loadMorePosts, isMoreLoading } from './Store/postsSlice';
 import { useEffect } from "react";
 import ClipLoader from 'react-spinners/ClipLoader';
+import styles from './styles/Posts.css';
 
 function Posts() {
     const posts = useSelector(selectPosts);

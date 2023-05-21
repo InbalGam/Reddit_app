@@ -4,9 +4,9 @@ import { searchReddit, loadMore } from '../Utilities/Reddit_API';
 
 export const loadPosts = createAsyncThunk(
     'posts/loadPosts',
-    async (term) => {
-        const results = await searchReddit(term);
-        return {results, term};
+    async ({term, type}) => {
+        const results = await searchReddit(term, type);
+        return {results, term, type};
     }
 );
 
@@ -15,7 +15,7 @@ export const loadMorePosts = createAsyncThunk(
     'posts/loadMorePosts',
     async (arg, { getState }) => {
         const status = getState();
-        const results = await loadMore(status.posts.subReddit, status.posts.posts.slice(-1)[0].name);
+        const results = await loadMore(status.posts.subReddit, status.posts.posts.slice(-1)[0].name, status.posts.type);
         return {results};
     }
 );
@@ -52,7 +52,8 @@ export const postsSlice = createSlice({
         hasError: false,
         isMoreLoading: false,
         hasMoreError: false,
-        subReddit: ''
+        subReddit: '',
+        type: ''
     },
     reducers: {},
     extraReducers: {
@@ -64,6 +65,7 @@ export const postsSlice = createSlice({
             const data = fetchData(action.payload);
             state.posts = data;
             state.subReddit = action.payload.term;
+            state.type = action.payload.type;
             state.isLoading = false;
             state.hasError = false;
         },

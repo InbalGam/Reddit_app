@@ -1,0 +1,7 @@
+div .posts_container {
+    width: 65%;
+    margin-left: 3.125rem;
+    box-shadow: 0.625rem 0.625rem #dddbe0;
+    border-radius: 2rem;
+    background-color: white;
+}

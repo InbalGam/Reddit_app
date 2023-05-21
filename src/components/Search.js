@@ -15,7 +15,7 @@ function Search() {
 
     async function search(e) {
         e.preventDefault();
-        dispatch(loadPosts(text));
+        dispatch(loadPosts({term:text, type:'search'}));
     };
 
 
