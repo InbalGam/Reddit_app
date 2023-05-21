@@ -2,11 +2,16 @@
     background-color: #f0eff2;
 }
 
-.App_header {
-    height: 20%;
+.App {
+    text-align: center;
 }
 
-.App_body {
-    height: 80%;
-    margin-top: 1rem;
+.App_header {
+    background-color: white;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px #dddbe0;
 }
