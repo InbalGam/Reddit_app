@@ -1,0 +1,32 @@
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+}
+.searchField {
+    width: 300px;
+    height: 10px;
+    padding: 10px 35px 10px 15px;
+    border: afaeb1;
+    border-radius: 5px;
+    outline: auto;
+    outline-color: #706e82;
+    background-color: #f0eff2;
+}
+  
+.searchButton {
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    align-self: center;
+}
+  
+.searchButton img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    background-color: white;
+}

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadPosts } from './Store/postsSlice';
+import searchImage from './styles/images/search.webp';
+import styles from './styles/Search.css';
 
 function Search() {
     const [text, setText] = useState('');
@@ -20,8 +22,10 @@ function Search() {
     return (
         <div className="search">
             <form onSubmit={search}>
-                <input id='search' type='text' value={text} onChange={handleTextChange} name='search' className='search_input' placeholder='Search' />
-                <input type="submit" value="Submit" className='submit' />
+                <input id='search' type='text' value={text} onChange={handleTextChange} name='search' className='searchField' placeholder='Search' />
+                <button type="submit" className="searchButton">
+                    <img src={searchImage} />
+                </button>
             </form>
         </div>
     );
