@@ -37,7 +37,8 @@ const fetchData = (payload) => {
             thumbnail: el.data.thumbnail,
             id: el.data.id,
             permalink: el.data.permalink,
-            name : el.data.name
+            name : el.data.name,
+            post_hint: el.data.post_hint
         };
     });
     return data;
