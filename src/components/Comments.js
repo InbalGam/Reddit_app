@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import ClipLoader from 'react-spinners/ClipLoader';
 import Comment from './Comment';
 import { getComments } from './Utilities/Reddit_API';
+import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
+import styles from './styles/Comments.css';
 
 function Comments(props) {
     const [showingComments, setShowingComments] = useState(false);
@@ -33,7 +35,7 @@ function Comments(props) {
 
     return (
         <div className="comments_container">
-            <button onClick={showComments} >Comments</button>
+            <button onClick={showComments} ><ModeCommentOutlinedIcon /></button>
             {showingComments === false ? '' : (isLoading ? <ClipLoader color={'#3c0c21'} size={80} /> : <ul>{comments.map((el, ind) => <Comment el={el} ind={ind}/>)}</ul> )}
         </div>
     );

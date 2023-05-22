@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadPosts } from './Store/postsSlice';
-import searchImage from './styles/images/search.webp';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import styles from './styles/Search.css';
 
 function Search() {
@@ -24,7 +24,7 @@ function Search() {
             <form onSubmit={search}>
                 <input id='search' type='text' value={text} onChange={handleTextChange} name='search' className='searchField' placeholder='Search' />
                 <button type="submit" className="searchButton">
-                    <img src={searchImage} />
+                    <SearchOutlinedIcon />
                 </button>
             </form>
         </div>

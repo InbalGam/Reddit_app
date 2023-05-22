@@ -1,4 +1,65 @@
+div .post {
+    width: 95%;
+    margin-left: 3.125rem;
+    box-shadow: 0.625rem 0.625rem #dddbe0;
+    border-radius: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.postLikes {
+    margin-left: 1.25rem;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(75, 71, 71, 0.945);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postLikes button {
+    border: none;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.postLikes .downArrow {
+    transform: rotate(180deg);
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-top: 1rem;
+}
+
+.postLikes .upArrow {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.postHeaderData {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.postHeader {
+}
+
 .postImg {
-    height: 600px;
-    width: 600px;
+    height: 37.5rem;
+    width: 37.5rem;
+}
+
+h1 {
+    padding-top: 0.5rem;
+}
+
+.postData {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 }
