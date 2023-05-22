@@ -39,7 +39,7 @@ function Post(props) {
                         {props.el.post_hint === 'image' ? <img className='postImg' src={props.el.url} alt='post image' styles={styles.img}/> : ''}
                     </div>
                     <div className='postData'>
-                        <p>{props.el.author}</p>
+                        <p className='postAuthor'>{props.el.author}</p>
                         <div className='postComments'>
                             <Comments el={props.el} />
                             <p>{props.el.numComments}</p>

@@ -12,7 +12,7 @@ div .post {
     margin-left: 1.25rem;
     margin-top: 3rem;
     font-size: 1.5rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: rgba(75, 71, 71, 0.945);
     display: flex;
     flex-direction: column;
@@ -30,13 +30,11 @@ div .post {
     transform: rotate(180deg);
     height: 2.5rem;
     width: 2.5rem;
-    margin-top: 1rem;
 }
 
 .postLikes .upArrow {
     height: 2.5rem;
     width: 2.5rem;
-    margin-bottom: 1rem;
     margin-top: 0.5rem;
 }
 
@@ -56,10 +54,31 @@ div .post {
 
 h1 {
     padding-top: 0.5rem;
+    text-align: left;
 }
 
 .postData {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
+    border-top: 0.05rem solid rgb(204, 202, 202);
+    margin-top: 7rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.postComments {
+    display: flex;
+    align-items: flex-start;
+}
+
+.postComments p {
+    margin-top: 0.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(75, 71, 71, 0.945);
+}
+
+.postAuthor {
+    color: rgb(132, 132, 255);
+    font-weight: bold;
 }
