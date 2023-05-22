@@ -1,6 +1,5 @@
 div .post {
-    width: 95%;
-    margin-left: 3.125rem;
+    width: 100%;
     box-shadow: 0.625rem 0.625rem #dddbe0;
     border-radius: 2rem;
     background-color: white;
@@ -44,9 +43,6 @@ div .post {
     flex-direction: column;
 }
 
-.postHeader {
-}
-
 .postImg {
     height: 37.5rem;
     width: 37.5rem;
@@ -65,11 +61,12 @@ h1 {
     margin-top: 7rem;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
+    position: relative;
 }
 
 .postComments {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .postComments p {
@@ -81,4 +78,10 @@ h1 {
 .postAuthor {
     color: rgb(132, 132, 255);
     font-weight: bold;
+    margin-right: 3rem;
+}
+
+.commentsAndNum {
+    display: flex;
+    align-items: center;
 }

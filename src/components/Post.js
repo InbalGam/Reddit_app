@@ -3,12 +3,17 @@ import styles from './styles/Post.css';
 import { timeAgo } from './Utilities/utilities';
 import StraightOutlinedIcon from '@mui/icons-material/StraightOutlined';
 import { useState } from 'react';
+import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
+import { getComments } from './Utilities/Reddit_API';
 
 function Post(props) {
     const [likeCalc, setLikeCalc] = useState({
         ups: props.el.ups,
         downs: props.el.downs
     });
+    const [showingComments, setShowingComments] = useState(false);
+    const [comments, setComments] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     function handleClick(e) {
         const className = e.target.className;
@@ -23,6 +28,25 @@ function Post(props) {
             ups: newUps,
             downs: newDowns 
         });
+    };
+
+
+    async function showComments(e) {
+        setIsLoading(true);
+        setShowingComments(!showingComments);
+        const results = await getComments(props.el.permalink);
+        const data = results[1].data.children.map(el => {
+            return {
+                author: el.data.author,
+                ups: el.data.ups,
+                downs: el.data.downs,
+                body: el.data.body,
+                timeCreated: new Date(el.data.created * 1000),
+                permalink: el.data.permalink
+            };
+        });
+        setComments(data);
+        setIsLoading(false);
     };
 
     return ( 
@@ -40,11 +64,14 @@ function Post(props) {
                     </div>
                     <div className='postData'>
                         <p className='postAuthor'>{props.el.author}</p>
-                        <div className='postComments'>
-                            <Comments el={props.el} />
+                        <p>{timeAgo(props.el.timeCreated)}</p>
+                        <div className='commentsAndNum'>
+                            <button onClick={showComments} ><ModeCommentOutlinedIcon /></button>
                             <p>{props.el.numComments}</p>
                         </div>
-                        <p>{timeAgo(props.el.timeCreated)}</p>
+                    </div>
+                    <div className='postComments'>
+                        <Comments isLoading={isLoading} showingComments={showingComments} comments={comments}/>
                     </div>
                 </div>
             </div>

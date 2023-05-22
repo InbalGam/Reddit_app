@@ -1,0 +1,31 @@
+.commentContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    background-color: #fcfcfc;
+}
+
+.commentContainer:hover {
+    background-color: #e2dfdf;
+}
+
+.commentContainer .commentAuthor {
+    color: rgb(132, 132, 255);
+    font-weight: bold;
+    align-self: flex-start;
+    text-align: left;
+    padding-right: 1rem;
+}
+
+.commentContainer .commentBody {
+    align-self: flex-start;
+    text-align: left;
+    padding-top: 0.25rem;
+}
+
+.commentContainer .commentTime {
+    text-align: left;
+    font-weight: bolder;
+    padding-left: 1rem;
+}

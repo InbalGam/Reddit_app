@@ -4,3 +4,7 @@ button {
     background-color: white;
     cursor: pointer;
 }
+
+.allCommentsContainer {
+    width: 90%;
+}
