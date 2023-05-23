@@ -35,4 +35,8 @@
     .postData {
         padding-right: 0.5rem;
     }
+
+    .postAuthor {
+        margin-right: 1rem;
+    }
 }
