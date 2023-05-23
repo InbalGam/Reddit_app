@@ -16,6 +16,7 @@ div .post {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 1rem;
 }
 
 .postLikes button {
@@ -50,5 +51,6 @@ div .post {
 
 h1 {
     padding-top: 0.5rem;
+    padding-left: 1rem;
     text-align: left;
 }

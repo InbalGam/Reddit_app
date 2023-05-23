@@ -10,15 +10,20 @@ function Post(props) {
         downs: props.el.downs
     });
     
-    function handleClick(e) {
-        const className = e.target.className;
+    function handleClickUp(e) {
         let newUps = likeCalc.ups;
         let newDowns = likeCalc.downs;
-        if (className === 'upArrow') {
-            newUps = likeCalc.ups + 1;
-        } else {
-            newDowns = likeCalc.downs + 1;
-        }
+        newUps = likeCalc.ups + 1;
+        setLikeCalc({
+            ups: newUps,
+            downs: newDowns 
+        });
+    };
+
+    function handleClickDown(e) {
+        let newUps = likeCalc.ups;
+        let newDowns = likeCalc.downs;
+        newDowns = likeCalc.downs + 1;
         setLikeCalc({
             ups: newUps,
             downs: newDowns 
@@ -30,9 +35,9 @@ function Post(props) {
         <li key={props.ind}>
             <div className="post">
                 <div className='postLikes'>
-                    <button onClick={handleClick}><StraightOutlinedIcon className='upArrow'/></button>
+                    <button onClick={handleClickUp} className='upArrow'><StraightOutlinedIcon /></button>
                     <p>{likeCalc.ups - likeCalc.downs}</p>
-                    <button onClick={handleClick}><StraightOutlinedIcon className='downArrow'/></button>
+                    <button onClick={handleClickDown} className='downArrow'><StraightOutlinedIcon /></button>
                 </div>
                 <div className='postHeaderData'>
                     <div className='postHeader'>
