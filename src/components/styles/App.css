@@ -29,5 +29,6 @@ body {
 @media only screen and (max-width: 800px) {
     .App_body {
         flex-direction: column;
+        align-items: center;
     }
 }
