@@ -1,5 +1,6 @@
 div .post {
     width: 100%;
+    max-height: 60%;
     box-shadow: 0.625rem 0.625rem #dddbe0;
     border-radius: 2rem;
     background-color: white;
@@ -44,9 +45,14 @@ div .post {
     flex-direction: column;
 }
 
+.postHeader {
+    max-height: 90%;
+    max-width: 95%;
+}
+
 .postImg {
     height: 37.5rem;
-    width: 37.5rem;
+    width: 50%;
 }
 
 h1 {
