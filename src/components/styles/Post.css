@@ -52,36 +52,3 @@ h1 {
     padding-top: 0.5rem;
     text-align: left;
 }
-
-.postData {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 0.05rem solid rgb(204, 202, 202);
-    margin-top: 7rem;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
-    position: relative;
-}
-
-.postComments {
-    display: flex;
-    align-items: center;
-}
-
-.postComments p {
-    margin-top: 0.25rem;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgba(75, 71, 71, 0.945);
-}
-
-.postAuthor {
-    color: rgb(132, 132, 255);
-    font-weight: bold;
-    margin-right: 3rem;
-}
-
-.commentsAndNum {
-    display: flex;
-    align-items: center;
-}
