@@ -61,3 +61,9 @@ p {
     outline: auto;
     outline-color: #3d234b;
 }
+
+@media only screen and (max-width: 800px) {
+    div .community_container {
+        width: 90%;
+    }
+}

@@ -25,3 +25,9 @@ body {
     justify-content: space-around;
     align-items: start;
 }
+
+@media only screen and (max-width: 800px) {
+    .App_body {
+        flex-direction: column;
+    }
+}
