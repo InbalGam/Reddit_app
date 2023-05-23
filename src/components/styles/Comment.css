@@ -1,31 +1,39 @@
 .commentContainer {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    align-content: center;
+    flex-direction: column;
     background-color: #fcfcfc;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .commentContainer:hover {
     background-color: #e2dfdf;
 }
 
-.commentContainer .commentAuthor {
+.AuthorTime {
+    display: flex;
+    justify-content: space-between;
+}
+
+.AuthorTime .commentAuthor {
     color: rgb(132, 132, 255);
     font-weight: bold;
     align-self: flex-start;
     text-align: left;
-    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.AuthorTime .commentTime {
+    align-self: flex-end;
+    text-align: left;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-style: italic;
 }
 
 .commentContainer .commentBody {
     align-self: flex-start;
     text-align: left;
     padding-top: 0.25rem;
-}
-
-.commentContainer .commentTime {
-    text-align: left;
-    font-weight: bolder;
-    padding-left: 1rem;
 }
